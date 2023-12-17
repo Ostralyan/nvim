@@ -54,10 +54,10 @@ require('bufferline').setup({
     numbers = "buffer_id",
     separator_style = "thick",
     show_buffer_close_icons = false,
-    show_buffer_default_icon = false, -- whether or not an unrecognised filetype should show a default icon
   }
 })
 
+-- initializes indent blank line
 require("ibl").setup()
 
 -- Key Mappings
@@ -67,8 +67,20 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>fm', builtin.marks, {})
+vim.keymap.set('n', '<leader>fx', builtin.git_commits, {})
 
 -- Nvim Tree
 vim.keymap.set('n', '<leader>zz', "<cmd>NvimTreeToggle<cr>")
 vim.keymap.set('n', '<leader>zf', "<cmd>NvimTreeFindFile<cr>")
 
+-- Key Bindings for Window Navigation
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { noremap = true })
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { noremap = true })
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { noremap = true }) 
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { noremap = true })
+
+-- Switching buffers
+vim.keymap.set('n', '<leader>h', '<cmd>bn<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>l', '<cmd>bp<cr>', { noremap = true })
+vim.keymap.set('n', '<leader>bd', '<cmd>bd<cr>', { noremap = true })
