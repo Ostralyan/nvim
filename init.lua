@@ -7,6 +7,13 @@ vim.opt.cursorlineopt = 'line'
 vim.opt.mouse = 'a'
 vim.opt.clipboard = 'unnamedplus'
 
+-- Auto-reload files when changed outside of nvim
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+  command = "if mode() != 'c' | checktime | endif",
+  pattern = { "*" },
+})
+
 local keymap = vim.keymap.set
 
 -- KeyMaps

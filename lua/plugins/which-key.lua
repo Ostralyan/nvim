@@ -1,105 +1,23 @@
 return {
-  'folke/which-key.nvim',
-  event = 'VeryLazy',
-  init = function()
-    vim.o.timeout = true
-    vim.o.timeoutlen = 300
-  end,
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  },
+  keys = {
+    {
+      "<leader>?",
+      function()
+        require("which-key").show({ global = false })
+      end,
+      desc = "Buffer Local Keymaps (which-key)",
+    },
+  },
   config = function()
     local wk = require('which-key')
     
-    wk.setup({
-      preset = 'modern',
-      delay = 300,
-      plugins = {
-        marks = true,
-        registers = true,
-        spelling = {
-          enabled = true,
-          suggestions = 20,
-        },
-        presets = {
-          operators = true,
-          motions = true,
-          text_objects = true,
-          windows = true,
-          nav = true,
-          z = true,
-          g = true,
-        },
-      },
-      replace = {
-        ['<space>'] = 'SPC',
-        ['<cr>'] = 'RET',
-        ['<tab>'] = 'TAB',
-      },
-      icons = {
-        breadcrumb = '»',
-        separator = '➜',
-        group = '+',
-        ellipsis = '…',
-        mappings = true,
-        rules = {},
-        colors = true,
-        keys = {
-          Up = ' ',
-          Down = ' ',
-          Left = ' ',
-          Right = ' ',
-          C = '󰘴 ',
-          M = '󰘵 ',
-          D = '󰘳 ',
-          S = '󰘶 ',
-          CR = '󰌑 ',
-          Esc = '󱊷 ',
-          ScrollWheelDown = '󱕐 ',
-          ScrollWheelUp = '󱕑 ',
-          NL = '󰌑 ',
-          BS = '󰁮',
-          Space = '󱁐 ',
-          Tab = '󰌒 ',
-          F1 = '󱊫',
-          F2 = '󱊬',
-          F3 = '󱊭',
-          F4 = '󱊮',
-          F5 = '󱊯',
-          F6 = '󱊰',
-          F7 = '󱊱',
-          F8 = '󱊲',
-          F9 = '󱊳',
-          F10 = '󱊴',
-          F11 = '󱊵',
-          F12 = '󱊶',
-        },
-      },
-      keys = {
-        scroll_down = '<c-d>',
-        scroll_up = '<c-u>',
-      },
-      win = {
-        border = 'rounded',
-        position = 'bottom',
-        margin = { 1, 0, 1, 0 },
-        padding = { 2, 2, 2, 2 },
-        winblend = 0,
-        height = { min = 4, max = 25 },
-        width = { min = 20, max = 50 },
-      },
-      layout = {
-        spacing = 3,
-        align = 'left',
-      },
-      filter = function(mapping)
-        return mapping.desc and mapping.desc ~= ''
-      end,
-      show_help = true,
-      show_keys = true,
-      triggers = {
-        { '<auto>', mode = 'nixsotc' },
-        { 's', mode = { 'n', 'v' } },
-      },
-    })
-
     -- Document existing key chains using the new v3 spec
     wk.add({
       -- Leader key groups
@@ -140,6 +58,7 @@ return {
 
       -- Git mappings
       { '<leader>gs', desc = 'Git status' },
+      { '<leader>ga', desc = 'Git add .' },
       { '<leader>gp', desc = 'Git push' },
       { '<leader>gP', desc = 'Git pull --rebase' },
       { '<leader>gb', desc = 'Toggle git blame' },
@@ -193,6 +112,21 @@ return {
       { '<leader>xq', desc = 'Quickfix' },
       { '<leader>xl', desc = 'Location List' },
 
+      -- NvimTree
+      { '<C-n>', desc = 'Toggle NvimTree' },
+
+      -- Window navigation
+      { '<C-h>', desc = 'Move to left pane' },
+      { '<C-j>', desc = 'Move to pane below' },
+      { '<C-k>', desc = 'Move to pane above' },
+      { '<C-l>', desc = 'Move to right pane' },
+
+      -- Window resizing
+      { '<C-Up>', desc = 'Increase height' },
+      { '<C-Down>', desc = 'Decrease height' },
+      { '<C-Left>', desc = 'Decrease width' },
+      { '<C-Right>', desc = 'Increase width' },
+
       -- Visual mode mappings
       { '<leader>hs', desc = 'Stage hunk', mode = 'v' },
       { '<leader>hr', desc = 'Reset hunk', mode = 'v' },
@@ -203,6 +137,10 @@ return {
       { '<C-k>', desc = 'Move to pane above', mode = 't' },
       { '<C-l>', desc = 'Move to right pane', mode = 't' },
       { '<Esc>', desc = 'Exit terminal mode', mode = 't' },
+
+      -- Special keys
+      { '<Esc>', desc = 'Clear search highlight' },
+      { '<leader>?', desc = 'Buffer Local Keymaps' },
     })
   end,
 }
