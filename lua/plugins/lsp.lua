@@ -15,6 +15,7 @@ return {
         "ts_ls",            -- TypeScript
         "html",             -- HTML
         "cssls",            -- CSS
+        "gopls",            -- Go
       },
       automatic_installation = true,
     })
@@ -51,6 +52,26 @@ return {
           diagnostics = {
             globals = { 'vim' },
           },
+        },
+      },
+    })
+    
+    -- Go setup
+    lspconfig.gopls.setup({
+      capabilities = capabilities,
+      filetypes = { "go", "gomod", "gowork", "gotmpl" },
+      root_dir = lspconfig.util.root_pattern("go.mod", ".git", "go.work"),
+      settings = {
+        gopls = {
+          analyses = {
+            unusedparams = true,
+          },
+          staticcheck = true,
+          gofumpt = true,
+	  buildFlags = {"-mod=mod"},
+	  env = {
+	    GOFLAGS = "-mod=mod",
+  	  }
         },
       },
     })
