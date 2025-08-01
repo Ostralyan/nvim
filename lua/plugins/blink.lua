@@ -1,6 +1,7 @@
 return {
   'saghen/blink.cmp',
   lazy = false, -- lazy loading handled internally
+  build = 'cargo build --release',
   -- use a release tag to download pre-built binaries
   version = 'v0.*',
   
@@ -30,3 +31,4 @@ return {
   -- without having to redefine it
   opts_extend = { "sources.default" }
 }
+
