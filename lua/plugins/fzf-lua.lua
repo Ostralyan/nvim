@@ -28,7 +28,7 @@ return {
     vim.keymap.set("n", "<leader>fd", "<cmd>FzfLua lsp_definitions<cr>", { desc = "LSP definitions" })
     
     -- Git integration
-    vim.keymap.set("n", "<leader>gc", "<cmd>FzfLua git_commits<cr>", { desc = "Git commits" })
-    vim.keymap.set("n", "<leader>gs", "<cmd>FzfLua git_status<cr>", { desc = "Git status" })
+    vim.keymap.set("n", "<leader>gcs", "<cmd>FzfLua git_commits<cr>", { desc = "Git commits" })
+    vim.keymap.set("n", "<leader>gss", "<cmd>FzfLua git_status<cr>", { desc = "Git status" })
   end,
 }
