@@ -30,12 +30,5 @@ return {
     -- Keymaps
     vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
     vim.keymap.set("n", "<leader>ef", ":NvimTreeFindFile<CR>", { desc = "Find current file in explorer" })
-
-    -- Auto open nvim-tree on startup
-    vim.api.nvim_create_autocmd("VimEnter", {
-      callback = function()
-        require("nvim-tree.api").tree.open()
-      end,
-    })
   end,
 }

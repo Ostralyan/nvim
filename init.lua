@@ -7,12 +7,24 @@ vim.opt.cursorlineopt = 'line'
 vim.opt.mouse = 'a'
 vim.opt.clipboard = 'unnamedplus'
 
+-- Set the color of all line numbers
+
+-- Set the color of the current line number
+vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = 'red', bold = true })
+
+vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "white" })
+vim.api.nvim_set_hl(0, 'LineNr', { fg = 'red' }) -- Replace #AABBCC with your desired color
+vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "pink" })
+
+
 -- Auto-reload files when changed outside of nvim
 vim.opt.autoread = true
 vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
   command = "if mode() != 'c' | checktime | endif",
-  pattern = { "*" },
+  desc = "Check for external file changes"
 })
+
+vim.opt.updatetime = 1000
 
 local keymap = vim.keymap.set
 
