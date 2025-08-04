@@ -115,12 +115,6 @@ return {
       -- NvimTree
       { '<C-n>', desc = 'Toggle NvimTree' },
 
-      -- Window navigation
-      { '<C-h>', desc = 'Move to left pane' },
-      { '<C-j>', desc = 'Move to pane below' },
-      { '<C-k>', desc = 'Move to pane above' },
-      { '<C-l>', desc = 'Move to right pane' },
-
       -- Window resizing
       { '<C-Up>', desc = 'Increase height' },
       { '<C-Down>', desc = 'Decrease height' },
@@ -132,10 +126,6 @@ return {
       { '<leader>hr', desc = 'Reset hunk', mode = 'v' },
 
       -- Terminal mode descriptions
-      { '<C-h>', desc = 'Move to left pane', mode = 't' },
-      { '<C-j>', desc = 'Move to pane below', mode = 't' },
-      { '<C-k>', desc = 'Move to pane above', mode = 't' },
-      { '<C-l>', desc = 'Move to right pane', mode = 't' },
       { '<Esc>', desc = 'Exit terminal mode', mode = 't' },
 
       -- Special keys

@@ -39,18 +39,9 @@ keymap('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code actions' })
 keymap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
 keymap('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
 
--- Add these for terminal mode navigation
-vim.keymap.set('t', '<C-h>', '<C-\\><C-n><C-w>h', { desc = 'Terminal: move left' })
-vim.keymap.set('t', '<C-j>', '<C-\\><C-n><C-w>j', { desc = 'Terminal: move down' })
-vim.keymap.set('t', '<C-k>', '<C-\\><C-n><C-w>k', { desc = 'Terminal: move up' })
-vim.keymap.set('t', '<C-l>', '<C-\\><C-n><C-w>l', { desc = 'Terminal: move right' })
+-- Terminal mode
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- Easier window navigation
-vim.keymap.set('n', '<C-h>', '<C-w>h', { desc = 'Move to left pane' })
-vim.keymap.set('n', '<C-j>', '<C-w>j', { desc = 'Move to pane below' })
-vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Move to pane above' })
-vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Move to right pane' })
 
 -- Window management
 vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = 'Split vertically' })
