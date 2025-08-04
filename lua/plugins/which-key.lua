@@ -95,6 +95,11 @@ return {
       { '<leader>fW', desc = 'Grep WORD' },
       { '<leader>fd', desc = 'Find diagnostics' },
 
+      -- File path copying
+      { '<leader>fp', desc = 'Copy full path to clipboard' },
+      { '<leader>fn', desc = 'Copy filename to clipboard' },
+      { '<leader>fy', desc = 'Copy relative path to clipboard' },
+
       -- LSP mappings
       { '<leader>lr', desc = 'LSP references' },
       { '<leader>ls', desc = 'LSP document symbols' },

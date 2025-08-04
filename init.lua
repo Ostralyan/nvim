@@ -92,4 +92,23 @@ keymap('n', '<leader>bs', ':write<CR>', { noremap = true, silent = true, desc = 
 keymap('n', '<leader>bS', ':wall<CR>', { noremap = true, silent = true, desc = 'Save all buffers' })
 keymap('n', '<leader>br', ':edit!<CR>', { noremap = true, silent = true, desc = 'Reload buffer' })
 
+-- File path copying
+keymap('n', '<leader>fp', function()
+  local path = vim.fn.expand('%:p')
+  vim.fn.setreg('*', path)
+  print('Full path copied: ' .. path)
+end, { noremap = true, silent = true, desc = 'Copy full path to clipboard' })
+
+keymap('n', '<leader>fn', function()
+  local filename = vim.fn.expand('%:t')
+  vim.fn.setreg('*', filename)
+  print('Filename copied: ' .. filename)
+end, { noremap = true, silent = true, desc = 'Copy filename to clipboard' })
+
+keymap('n', '<leader>fy', function()
+  local relpath = vim.fn.expand('%')
+  vim.fn.setreg('*', relpath)
+  print('Relative path copied: ' .. relpath)
+end, { noremap = true, silent = true, desc = 'Copy relative path to clipboard' })
+
 
