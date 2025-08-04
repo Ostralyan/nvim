@@ -128,6 +128,24 @@ return {
       -- Terminal mode descriptions
       { '<Esc>', desc = 'Exit terminal mode', mode = 't' },
 
+      -- Buffer management
+      { '<leader>b', group = 'buffer' },
+      { '<leader>bn', desc = 'Next buffer' },
+      { '<leader>bp', desc = 'Previous buffer' },
+      { '<leader>bf', desc = 'First buffer' },
+      { '<leader>bl', desc = 'Last buffer' },
+      { '<leader>bb', desc = 'List buffers' },
+      { '<leader>b#', desc = 'Alternate buffer' },
+      { '<leader>bd', desc = 'Delete buffer' },
+      { '<leader>bD', desc = 'Force delete buffer' },
+      { '<leader>bw', desc = 'Wipeout buffer' },
+      { '<leader>bW', desc = 'Force wipeout buffer' },
+      { '<leader>bo', desc = 'Close other buffers' },
+      { '<leader>ba', desc = 'Close all but current' },
+      { '<leader>bs', desc = 'Save buffer' },
+      { '<leader>bS', desc = 'Save all buffers' },
+      { '<leader>br', desc = 'Reload buffer' },
+
       -- Special keys
       { '<Esc>', desc = 'Clear search highlight' },
       { '<leader>?', desc = 'Buffer Local Keymaps' },
