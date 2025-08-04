@@ -7,6 +7,17 @@ vim.opt.cursorlineopt = 'line'
 vim.opt.mouse = 'a'
 vim.opt.clipboard = 'unnamedplus'
 
+-- Default indentation settings - always use spaces, never tabs
+-- These will be overridden by guess-indent.nvim when it detects different settings
+vim.opt.expandtab = true        -- Convert tabs to spaces
+vim.opt.tabstop = 2             -- Number of spaces tabs count for (default)
+vim.opt.shiftwidth = 2          -- Size of an indent (default)
+vim.opt.softtabstop = 2         -- Number of spaces tabs count for in insert mode (default)
+vim.opt.smartindent = true      -- Insert indents automatically
+vim.opt.autoindent = true       -- Copy indent from current line when starting new line
+vim.opt.breakindent = true      -- Enable break indent
+vim.opt.shiftround = true       -- Round indent to multiple of shiftwidth
+
 -- Set the color of all line numbers
 
 -- Set the color of the current line number
